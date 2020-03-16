@@ -12,8 +12,10 @@ import com.griffins.whatsinmyfridge.R;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,17 +23,44 @@ import android.widget.TextView;
 import java.util.Calendar;
 
 public class AddFoodPage extends AppCompatActivity {
+    DatePickerDialog picker;
+    EditText eText;
+    TextView tvw;
 
     private static final String TAG = "AddFoodPage";
 
-    private TextView mexpirationDate;
-    private DatePickerDialog.OnDateSetListener mDateSetListener;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food_page);
+        tvw=(TextView)findViewById(R.id.textView1);
+        eText=(EditText)findViewById(R.id.editText1);
+        eText.setInputType(InputType.TYPE_NULL);
+        eText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                final int day = cldr.get(Calendar.DAY_OF_MONTH);
+                final int month = cldr.get(Calendar.MONTH);
+                final int year = cldr.get(Calendar.YEAR);
+
+                picker = new DatePickerDialog(AddFoodPage.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                eText.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+                            } year, month, day;
+
+
+
+                        });
+                picker.show();
+            }
+        });
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -46,49 +75,12 @@ public class AddFoodPage extends AppCompatActivity {
             }
         });
 
-        mexpirationDate = (TextView) findViewById(R.id.expirationDate);
 
-        mexpirationDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog expirationDate = new DatePickerDialog(
-                        AddFoodPage.this,
-                        android.R.style.Theme_Black_NoTitleBar,
-                        mDateSetListener,
-                        year,month,day);
-                //setBackgroundDrawable(null);
-                //dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
-                //onCreateDialog();
-
-
-            }
-
-            private void onCreateDialog() {
-                // .getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT))
-            }
-        });
-
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                month = month + 1;
-                Log.d(TAG, "onDateSet: dd/mm/yyyy " + dayOfMonth + "/" + month + "/" + year);
-
-                String date = dayOfMonth + "/" + month + "/" + year;
-                mexpirationDate.setText(date);
-
-            }
-        };
 
 
     }
-
-
-
 }
+
+
+
+
