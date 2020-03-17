@@ -43,20 +43,15 @@ public class AddFoodPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Calendar cldr = Calendar.getInstance();
-                final int day = cldr.get(Calendar.DAY_OF_MONTH);
-                final int month = cldr.get(Calendar.MONTH);
-                final int year = cldr.get(Calendar.YEAR);
+                int dayOfMonth = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
 
                 picker = new DatePickerDialog(AddFoodPage.this,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                eText.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
-                            } year, month, day;
+                        new DatePickerDialog.OnDateSetListener() {@Override public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) { eText.setText(dayOfMonth + "/" + (month + 1) + "/" + year); }
+                        }
+                        , year, month, dayOfMonth);
 
-
-
-                        });
                 picker.show();
             }
         });
