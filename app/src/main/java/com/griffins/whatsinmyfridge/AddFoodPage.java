@@ -15,12 +15,15 @@ import androidx.appcompat.widget.Toolbar;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 public class AddFoodPage extends AppCompatActivity {
     DatePickerDialog picker;
@@ -70,6 +73,10 @@ public class AddFoodPage extends AppCompatActivity {
             }
         });
 
+        Spinner dropdown = findViewById(R.id.category);
+        String[] categories = new String[]{"Category", "Fruits & Vegetables", "Meat & Seafood", "Dairy", "Frozen", "Drinks", "Baked Goods"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, categories);
+        dropdown.setAdapter(adapter);
 
 
 
