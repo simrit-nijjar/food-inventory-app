@@ -34,8 +34,4 @@
         <item>Pantry</item>
     </string-array>
 
-
-
-    <string name="app_name">Whats In My Fridge</string>
-    <string name="title_activity_add_food_page">AddFoodPage</string>
 </resources>

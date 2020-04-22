@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     tools:context=".activities.MainActivity">
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/inventoryTextView"
@@ -166,6 +163,12 @@
 
     <Space
         android:id="@+id/space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Table End -->
 
     <ImageButton
         android:id="@+id/addFood"
