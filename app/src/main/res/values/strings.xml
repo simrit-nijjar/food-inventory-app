@@ -1,4 +1,41 @@
 <resources>
+
+    <string name="nav1">Inventory</string>
+    <string name="nav2">Timeline</string>
+    <string name="nav3">Settings</string>
+
+    <string name="app_name">What\'s In My Fridge</string>
+    <string name="inventory">Inventory</string>
+    <string name="addFood">Add Food</string>
+
+    <string name="allSubMenuBtn">All</string>
+    <string name="fridgeSubMenuBtn">Fridge</string>
+    <string name="pantrySubMenuBtn">Pantry</string>
+
+    <string name="addFoodBtn">Add Food</string>
+
+
+    <!--************************** Category Options **************************-->
+    <string-array name="category_options">
+        <item>Beverage</item>
+        <item>Bread</item>
+        <item>Cereal</item>
+        <item>Dairy</item>
+        <item>Fruit</item>
+        <item>Legumes</item>
+        <item>Meat</item>
+        <item>Vegetables</item>
+    </string-array>
+
+
+    <!--************************** Location Options **************************-->
+    <string-array name="location_options">
+        <item>Fridge</item>
+        <item>Pantry</item>
+    </string-array>
+
+
+
     <string name="app_name">Whats In My Fridge</string>
     <string name="title_activity_add_food_page">AddFoodPage</string>
 </resources>

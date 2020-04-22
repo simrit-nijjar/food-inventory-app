@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="color1">#886440</color>
+    <color name="color2">#FF6E50</color>
+    <color name="color3">#FFA220</color>
+    <color name="color4">#FFE041</color>
+    <color name="color5">#2C550B</color>
+
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+
+    <color name="colorBackground">#fff</color>
+    <color name="colorText">#000</color>
+    <color name="colorAltBackground">#fff</color>
+
+
+    <color name="colorPrimary">#2C550B</color>
+    <color name="colorPrimaryDark">#2C550B</color>
+    <color name="colorAccent">#FF6E50</color>
+
+
+    <!-- @drawable/border color scheme -->
+    <color name="background_color">#ffffff</color>
+    <color name="border_color">#2C550B</color>
+    <color name="expiredBorder">#FF6E50</color>
+
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>

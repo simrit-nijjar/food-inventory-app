@@ -1,8 +1,6 @@
-package com.griffins.whatsinmyfridge;
+package com.griffins.whatsinmyfridge.activities;
 
 import android.app.DatePickerDialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -13,19 +11,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.Calendar;
-import java.util.Locale;
 
-public class AddFoodPage extends AppCompatActivity {
+public class AddFoodActivity extends AppCompatActivity {
     DatePickerDialog picker;
     EditText eText;
     TextView tvw;
@@ -50,7 +45,7 @@ public class AddFoodPage extends AppCompatActivity {
                 int month = cldr.get(Calendar.MONTH);
                 int year = cldr.get(Calendar.YEAR);
 
-                picker = new DatePickerDialog(AddFoodPage.this,
+                picker = new DatePickerDialog(AddFoodActivity.this,
                         new DatePickerDialog.OnDateSetListener() {@Override public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) { eText.setText(dayOfMonth + "/" + (month + 1) + "/" + year); }
                         }
                         , year, month, dayOfMonth);

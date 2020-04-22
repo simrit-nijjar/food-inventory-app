@@ -1,12 +1,13 @@
-package com.griffins.whatsinmyfridge;
+package com.griffins.whatsinmyfridge.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.griffins.whatsinmyfridge.R;
 
 public class MainActivity extends AppCompatActivity {
 
