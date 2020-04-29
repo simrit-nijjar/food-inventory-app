@@ -112,37 +112,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/expTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="EXPIRED"
-                android:textColor="#900"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/expInventoryRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="28dp" />
-
-            <TextView
-                android:id="@+id/invTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="INVENTORY"
-                android:textColor="#000"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/inventoryRecyclerView"
                 android:layout_width="match_parent"

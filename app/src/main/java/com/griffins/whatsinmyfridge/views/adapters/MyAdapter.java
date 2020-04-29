@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.griffins.whatsinmyfridge.R;
 import com.griffins.whatsinmyfridge.activities.SecondActivity;
 import com.griffins.whatsinmyfridge.models.entities.Food;
+import com.griffins.whatsinmyfridge.models.entities.Global;
 
 import java.util.ArrayList;
 
@@ -108,4 +109,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
+
+    public Food getItemAt(int position) {
+        return Global.notExpired.get(position);
+    }
+
 }
