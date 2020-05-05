@@ -11,6 +11,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.griffins.whatsinmyfridge.R;
+import com.griffins.whatsinmyfridge.models.entities.Food;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -19,6 +23,7 @@ public class SecondActivity extends AppCompatActivity {
     TextView foodName, expValue, catValue, locValue, amntValue, notesValue;
 
     String data1, data2, data3, data4, data5, data6;
+    Food item;
     int myImage;
 
     @Override
@@ -52,15 +57,18 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        if(getIntent().hasExtra("myImage") && getIntent().hasExtra("data1") && getIntent().hasExtra("data2")
-                && getIntent().hasExtra("data3") && getIntent().hasExtra("data4") && getIntent().hasExtra("data5") && getIntent().hasExtra("data6")) {
-            data1 = getIntent().getStringExtra("data1");
-            data2 = getIntent().getStringExtra("data2");
-            data3 = getIntent().getStringExtra("data3");
-            data4 = getIntent().getStringExtra("data4");
-            data5 = getIntent().getStringExtra("data5");
-            data6 = getIntent().getStringExtra("data6");
-            myImage = getIntent().getIntExtra("myImage", 1);
+        if(getIntent().hasExtra("item")) {
+
+            item = (Food) getIntent().getSerializableExtra("item");
+
+            data1 = item.getName();
+            data2 = item.getExpiration();
+            data3 = item.getLocation();
+            data4 = item.getAmount();
+            data5 = item.getCategory();
+            data6 = item.getNotes();
+            myImage = item.getImage();
+
         }
 
         else {

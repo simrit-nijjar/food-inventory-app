@@ -13,6 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.griffins.whatsinmyfridge.R;
+import com.griffins.whatsinmyfridge.activities.AddEditFoodActivity;
 import com.griffins.whatsinmyfridge.activities.SecondActivity;
 import com.griffins.whatsinmyfridge.models.entities.Food;
 import com.griffins.whatsinmyfridge.models.entities.Global;
@@ -21,7 +22,6 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-    // private String[] list;  // Food Object List
     private ArrayList<Food> list;                     // Food Object List
     private String[] data1 = new String[100];         // name
     private String[] data2 = new String[100];         // expiration
@@ -35,10 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public MyAdapter(Context ct, ArrayList<Food> notExpired) {
         context = ct;
-        // list = notExpired.toArray(new String[notExpired.size()]);
         list = notExpired;
-
-        // System.out.println(list.get(1).name);
 
         for (int i = 0; i < list.size(); i++) {
             data1[i] = list.get(i).getName();
@@ -70,17 +67,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.myImage.setImageResource(images[position]);
         holder.myImage2.setImageResource(images2[position]);
 
+        final Food item = list.get(position);
+
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, SecondActivity.class);
-                intent.putExtra("data1", data1[position]);
-                intent.putExtra("data2", data2[position]);
-                intent.putExtra("data3", data3[position]);
-                intent.putExtra("data4", data4[position]);
-                intent.putExtra("data5", data5[position]);
-                intent.putExtra("data6", data6[position]);
-                intent.putExtra("myImage", images[position]);
+                Intent intent = new Intent(context, AddEditFoodActivity.class);
+                intent.putExtra("item", item);
+                intent.putExtra("pos", position);
                 context.startActivity(intent);
             }
         });
@@ -89,7 +83,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return Global.notExpired.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -109,9 +103,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
-
-    public Food getItemAt(int position) {
-        return Global.notExpired.get(position);
-    }
-
 }

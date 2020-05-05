@@ -51,7 +51,7 @@ public class MainActivity<milk> extends AppCompatActivity {
 
 
     private void moveToAddFoodActivity() {
-        Intent intent = new Intent(MainActivity.this, com.griffins.whatsinmyfridge.activities.AddFoodActivity.class);
+        Intent intent = new Intent(MainActivity.this, AddEditFoodActivity.class);
         startActivity(intent);
     }
 
@@ -90,6 +90,13 @@ public class MainActivity<milk> extends AppCompatActivity {
                 myAdapter.notifyDataSetChanged();
                 Toast.makeText(MainActivity.this, "Item Deleted", Toast.LENGTH_SHORT).show();
 
+                // Refresh Page
+                Intent refresh =  new Intent(MainActivity.this, MainActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(refresh);
+                overridePendingTransition(0, 0);
+
             }
         }).attachToRecyclerView(inventoryRecyclerView);
         // Recycler View Not Expired (END)
@@ -100,7 +107,7 @@ public class MainActivity<milk> extends AppCompatActivity {
         inventoryRecyclerView.setNestedScrollingEnabled(false);
         ViewGroup.LayoutParams layoutParams = inventoryRecyclerView.getLayoutParams();
         layoutParams.height = Global.notExpired.size() * 275;
-        System.out.println("Not Expired list: " + Global.notExpired.size());
+        // System.out.println("Not Expired list: " + Global.notExpired.size());
         inventoryRecyclerView.setLayoutParams(layoutParams);
     }
 

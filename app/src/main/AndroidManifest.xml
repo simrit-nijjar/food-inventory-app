@@ -18,7 +18,7 @@
             android:label="Details"
             android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".activities.AddFoodActivity"
+            android:name=".activities.AddEditFoodActivity"
             android:label="Add Food"
             android:parentActivityName=".activities.MainActivity" />
         <activity android:name=".activities.MainActivity">
