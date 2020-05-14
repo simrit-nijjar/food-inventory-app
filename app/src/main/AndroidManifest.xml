@@ -11,15 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.EditSecondActivity"
+        <activity android:name=".activities.TimelineActivity"></activity>
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation"></activity>
+        <activity
+            android:name=".activities.EditSecondActivity"
             android:label="Edit"
             android:parentActivityName=".activities.SecondActivity" />
-        <activity android:name=".activities.SecondActivity"
+        <activity
+            android:name=".activities.SecondActivity"
             android:label="Details"
             android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.AddEditFoodActivity"
-            android:label="Add Food"
+            android:label="Add"
             android:parentActivityName=".activities.MainActivity" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
@@ -28,6 +34,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

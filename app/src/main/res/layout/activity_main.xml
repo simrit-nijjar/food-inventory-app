@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -24,88 +25,64 @@
         android:id="@+id/fridgeSubMenuBtn"
         android:layout_width="110dp"
         android:layout_height="40dp"
-        android:layout_marginTop="68dp"
         android:backgroundTint="@color/colorAccent"
         android:text="@string/fridgeSubMenuBtn"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/pantrySubMenuBtn"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toEndOf="@+id/allSubMenuBtn"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/inventoryTextView" />
 
     <Button
         android:id="@+id/allSubMenuBtn"
         android:layout_width="110dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
         android:backgroundTint="@color/colorAccent"
         android:radius="2dp"
         android:text="@string/allSubMenuBtn"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/inventoryTextView" />
 
     <Button
         android:id="@+id/pantrySubMenuBtn"
         android:layout_width="110dp"
         android:layout_height="40dp"
-        android:layout_marginTop="68dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/colorAccent"
         android:text="@string/pantrySubMenuBtn"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/inventoryTextView" />
 
-    <Button
-        android:id="@+id/addFoodBtn"
-        android:layout_width="109dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="118dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="@string/addFoodBtn"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.964"
-        app:layout_constraintStart_toEndOf="@+id/searchView"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="236dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="124dp"
-        android:background="@drawable/border"
-        android:queryHint="Search "
-        app:showAsAction="ifRoom|collapseActionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:maxWidth="200dp"
+        android:queryHint="Search"
         app:actionViewClass="android.support.v7.widget.SearchView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/inventoryTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showAsAction="ifRoom|collapseActionView" />
 
     <ScrollView
         android:id="@+id/inventoryScrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="20dp"
+        android:background="#f1f1f1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/fridgeSubMenuBtn">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,47 +99,33 @@
 
     </ScrollView>
 
-
-
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left" />
 
-    <Space
-        android:id="@+id/space"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addFoodBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <!-- Table End -->
+        app:srcCompat="@drawable/ic_add_white_24dp" />
 
-    <ImageButton
-        android:id="@+id/addFood"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="317dp"
-        android:layout_marginTop="600dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="71dp"
-        android:adjustViewBounds="false"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:contentDescription="Plus Button"
-        android:cropToPadding="true"
-        android:scaleType="fitCenter"
+        android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/add_food_button" />
-
-    app:layout_constraintTop_toTopOf="parent" />
-    <!-- Table End -->
+        app:itemIconTint="@color/color2"
+        app:itemTextColor="@color/color2"
+        app:menu="@menu/bottom_navigation" />
 
 
 

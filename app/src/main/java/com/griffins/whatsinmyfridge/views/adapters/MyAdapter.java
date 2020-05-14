@@ -63,7 +63,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.myText1.setText(data1[position]);
         holder.myText2.setText(data2[position]);
-        holder.myText3.setText(data3[position]);
+        holder.myText3.setText(data4[position]);
         holder.myImage.setImageResource(images[position]);
         holder.myImage2.setImageResource(images2[position]);
 
