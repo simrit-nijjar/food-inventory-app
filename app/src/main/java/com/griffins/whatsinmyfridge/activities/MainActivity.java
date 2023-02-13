@@ -125,12 +125,12 @@ public class MainActivity<milk> extends AppCompatActivity {
 
     /*
 
-        Global.notExpired.add(0, new Food("Milk", "06/05/2020", "Fridge", "4", "Beverage", "", R.drawable.cat_dairy, R.drawable.ic_fridge));
-        Global.notExpired.add(1, new Food("Orange Juice", "06/11/2020", "Fridge", "1", "Beverage", "", R.drawable.cat_beverages, R.drawable.ic_fridge));
-        Global.notExpired.add(2, new Food("Nesquick", "06/25/2020", "pantry", "1", "Cereal", "", R.drawable.cat_cereal, R.drawable.ic_pantry));
-        Global.notExpired.add(3, new Food("Chocolate Milk", "06/17/2020", "Fridge", "2", "Beverage", "", R.drawable.cat_dairy, R.drawable.ic_fridge));
-        Global.notExpired.add(4, new Food("Green Pepper", "06/01/2020", "Fridge", "11", "Vegetable", "",  R.drawable.cat_vegetables, R.drawable.ic_fridge));
-        Global.notExpired.add(5, new Food("Tomato", "06/14/2020", "Fridge", "7", "Vegetable", "", R.drawable.cat_vegetables, R.drawable.ic_fridge));
+        Global.notExpired.add(0, new Food("Milk", "06/05/2021", "Fridge", "4", "Beverage", "", R.drawable.cat_dairy, R.drawable.ic_fridge));
+        Global.notExpired.add(1, new Food("Orange Juice", "06/11/2021", "Fridge", "1", "Beverage", "", R.drawable.cat_beverages, R.drawable.ic_fridge));
+        Global.notExpired.add(2, new Food("Nesquick", "06/25/2021", "pantry", "1", "Cereal", "", R.drawable.cat_cereal, R.drawable.ic_pantry));
+        Global.notExpired.add(3, new Food("Chocolate Milk", "06/17/2021", "Fridge", "2", "Beverage", "", R.drawable.cat_dairy, R.drawable.ic_fridge));
+        Global.notExpired.add(4, new Food("Green Pepper", "06/01/2021", "Fridge", "11", "Vegetable", "",  R.drawable.cat_vegetables, R.drawable.ic_fridge));
+        Global.notExpired.add(5, new Food("Tomato", "06/14/2021", "Fridge", "7", "Vegetable", "", R.drawable.cat_vegetables, R.drawable.ic_fridge));
 
 
      */
